@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\teren\Documents\Programming\C++\mandelbrot\repos\mandelbrotgpu3-windows\cmake\opencl\CMakeFiles\4308f86961b85be5b7e33c70662606d9\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B914CE1C-7917-346A-AB03-17A8ACA7DE44}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
