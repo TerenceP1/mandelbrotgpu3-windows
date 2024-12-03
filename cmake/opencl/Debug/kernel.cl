@@ -29,6 +29,12 @@ void NegD(decimal* a){
   }
 }
 
+void SubD(decimal* a, decimal* b, decimal* c){
+  NegD(b);
+  AddD(a,b,c);
+  NegD(b);
+}
+
 kernel void test(global uint *a, global uint *b, global uint *c) {
   printf(":)\n\n");
   volatile uint bruh = 0;
