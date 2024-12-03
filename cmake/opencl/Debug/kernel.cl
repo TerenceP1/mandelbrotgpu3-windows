@@ -1,5 +1,6 @@
 typedef struct {
   uint *data;
+  uint *tmp; // temporary storage with double the size of data
   uint size;  // size of data array. data  is in big edian and has 32 bits of
               // integer and dprec of decimal
   uint dprec; // just for convenience: may or may not be used. dprec=size-1
