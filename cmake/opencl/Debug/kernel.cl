@@ -46,6 +46,12 @@ void MulD(decimal*a, decimal*b, decimal*c){
   for (int i=0;i<sz;i++){
     for (int j=0;j<sz;j++){
       mltT=(ulong)(a->data[i])*(ulong)(b->data[j]);
+      // Add least significant half
+      ulong hf=mltT&0xffffffffL;
+      carry=(ulong)(c->tmp[1+i+j])+hf;
+      if (carry&0x100000000L){
+        // Add the carry
+      }
     }
   }
 }
