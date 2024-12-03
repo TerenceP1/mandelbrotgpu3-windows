@@ -36,6 +36,20 @@ void SubD(decimal* a, decimal* b, decimal* c){
   NegD(b);
 }
 
+void MulD(decimal*a, decimal*b, decimal*c){
+  ulong mltT;
+  ulong carry=0;
+  int sz=a->size;
+  for (int i=0;i<sz*2;i++){
+    c->tmp[i]=0;
+  }
+  for (int i=0;i<sz;i++){
+    for (int j=0;j<sz;j++){
+      mltT=(ulong)(a->data[i])*(ulong)(b->data[j]);
+    }
+  }
+}
+
 kernel void test(global uint *a, global uint *b, global uint *c) {
   printf(":)\n\n");
   volatile uint bruh = 0;
