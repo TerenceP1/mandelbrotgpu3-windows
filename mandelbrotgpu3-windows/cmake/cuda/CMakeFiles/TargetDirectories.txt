@@ -1,3 +1,0 @@
-C:/Users/teren/Documents/Programming/C++/mandelbrot/repos/mandelbrotgpu3-windows/cmake/cuda/CMakeFiles/mandelbrotgpu3-windws-cuda.dir
-C:/Users/teren/Documents/Programming/C++/mandelbrot/repos/mandelbrotgpu3-windows/cmake/cuda/CMakeFiles/ALL_BUILD.dir
-C:/Users/teren/Documents/Programming/C++/mandelbrot/repos/mandelbrotgpu3-windows/cmake/cuda/CMakeFiles/ZERO_CHECK.dir
