@@ -14,6 +14,7 @@ void AddD(decimal* a, decimal* b, decimal* c){
     psm=(ulong)(a->data[i])+(ulong)(b->data[i]);
     if (pass){psm++;}
     if (psm&0x100000000L){pass=1;}
+    else {pass=0;}
   }
 }
 
