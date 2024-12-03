@@ -72,6 +72,9 @@ void MulD(decimal*a, decimal*b, decimal*c){
       }
     }
   }
+  for (int i=1;i<1+sz;i++){
+    c->data[i-1]=c->tmp[i];
+  }
 }
 
 kernel void test(global uint *a, global uint *b, global uint *c) {
