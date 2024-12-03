@@ -17,6 +17,17 @@ void AddD(decimal* a, decimal* b, decimal* c){
   }
 }
 
+void NegD(decimal* a){
+  int sz=a->size;
+  for (int i=0;i<sz;i++){
+    a->data[i]=~(a->data[i]);
+  }
+  for (int i=sz-1;i>=0;i--){
+    a->data[i]++;
+    if (a->data[i]){break;}
+  }
+}
+
 kernel void test(global uint *a, global uint *b, global uint *c) {
   printf(":)\n\n");
   volatile uint bruh = 0;
