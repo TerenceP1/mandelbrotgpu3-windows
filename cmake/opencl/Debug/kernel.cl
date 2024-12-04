@@ -81,7 +81,36 @@ void MulD(decimal*a, decimal*b, decimal*c, uint* tmp){
 
 void CopyD(decimal* a, decimal* b){
   int sz=a->size;
-  for (int i=0;i<sz;i++){b->data[i]=a->data[i];}
+  for (int i=0;i<sz;i++){
+    b->data[i]=a->data[i];
+  }
+}
+
+void RecD(uint a, decimal* b, uint* tmp){
+  // Newton-Raphson
+  // input is assumed to be greater than 1
+  int sz=b->size;
+  int prec=b->dprec;
+  for (int i=0;i<sz;i++){
+    b->data[i]=0;
+  }
+  int lg=0;
+  int tmpSz=sz;
+  while (tmpSz>0){
+    tmpSz/=2;
+    lg++;
+  }
+  decimal* x,nx,two;
+  x->size=sz;
+  x->dprec=sz-1;
+  x->data=tmp;
+  nx->size=sz;
+  nx->dprec=sz-1;
+  nx->data=tmp+sz;
+  two->size=sz;
+  two->dprec=sz-1;
+  two->data=tmp+(2*sz);
+  
 }
 
 kernel void test(global uint *a, global uint *b, global uint *c) {
