@@ -125,6 +125,10 @@ void RecD(uint a, decimal* b, uint* tmp){
     x->data[2]=1;
   }
   for (int i=0;i<lg;i++){
+    tint->data[0]=a;
+    CopyD(x,nx);
+    MulD(nx,tint,nx);
+    
   }
 }
 
