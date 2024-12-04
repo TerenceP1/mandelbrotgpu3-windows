@@ -107,10 +107,25 @@ void RecD(uint a, decimal* b, uint* tmp){
   nx->size=sz;
   nx->dprec=sz-1;
   nx->data=tmp+sz;
-  two->size=sz;
-  two->dprec=sz-1;
-  two->data=tmp+(2*sz);
-  
+  tint->size=sz;
+  tint->dprec=sz-1;
+  tint->data=tmp+(2*sz);
+  for (int i=0;i<sz;i++){
+    x->data[i]=0;
+    nx->data[i]=0;
+    tint->data[i]=0;
+  }
+  //two->data[0]=2;
+  if (a==2){
+    x->data[1]=1;
+    CopyD(x,b);
+    return;
+  }
+  else{
+    x->data[2]=1;
+  }
+  for (int i=0;i<lg;i++){
+  }
 }
 
 kernel void test(global uint *a, global uint *b, global uint *c) {
