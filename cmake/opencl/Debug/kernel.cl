@@ -36,6 +36,8 @@ void SubD(decimal* a, decimal* b, decimal* c){
   NegD(b);
 }
 
+// tmp will be size size*3. size*2 is used for multiply and full tmp is used for division
+
 void MulD(decimal*a, decimal*b, decimal*c, uint* tmp){
   ulong mltT;
   ulong carry=0;
