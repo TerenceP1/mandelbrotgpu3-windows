@@ -7,6 +7,16 @@ typedef struct {
   uint dprec; // just for convenience: may or may not be used. dprec=size-1
 } decimal;
 
+typedef struct {
+  decimal* x, *y, *nx, *ny, *sqTmp, *ox, *oy; // ox and oy are original x and y. sqTmp is for storing y^2
+  uint* tmp;
+  char* re; // string with re in decimal
+  char* im; // string with im in decimal
+  decimal *tDig; // stores a digit or 10 during string to decimal conversion and bound check
+  decimal *tenth; // stores one tenth or a power of it
+  decimal *xSq, *ySq; // for checking whether number exceeded bounds
+} kernelIn;
+
 void AddD(decimal *a, decimal *b, decimal *c) {
   // does c=a+b
   ulong psm = 0; // used for finding the pass bit
