@@ -140,11 +140,11 @@ void RecD(uint a, decimal *b, uint *tmp) {
   for (int i = 0; i < lg; i++) {
     tint->data[0] = a;
     CopyD(x, nx);
-    MulD(nx, tint, nx);
+    MulD(nx, tint, nx, tmp + (3 * sz);
     tint->data[0] = 2;
     SubD(nx, tint, nx);
     NegD(nx);
-    MulD(x, nx, nx);
+    MulD(x, nx, nx, tmp + (3 * sz);
   }
   CopyD(x, b);
 }
