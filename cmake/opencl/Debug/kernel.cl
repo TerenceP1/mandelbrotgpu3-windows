@@ -140,13 +140,35 @@ void RecD(uint a, decimal *b, uint *tmp) {
   for (int i = 0; i < lg; i++) {
     tint->data[0] = a;
     CopyD(x, nx);
-    MulD(nx, tint, nx, tmp + (3 * sz);
+    MulD(nx, tint, nx, tmp + (3 * sz));
     tint->data[0] = 2;
     SubD(nx, tint, nx);
     NegD(nx);
-    MulD(x, nx, nx, tmp + (3 * sz);
+    MulD(x, nx, nx, tmp + (3 * sz));
   }
   CopyD(x, b);
+}
+
+int CmpD(decimal* a, decimal* b) {
+  // returns -1 if a<b, 0 if a=b, and 1 if a>b
+  int sz = a->size;
+  if ((int)(a->data[0])<(int)(b->data[0])){
+    return -1;
+  }
+  else if ((int)(a->data[0])<(int)(b->data[0])){
+    return 1;
+  }
+  else {
+    for (int i=1;i<sz;i++){
+      if (a->data[i]<b->data[i]){
+        reutrn -1;
+      }
+      else if (a->data[i]>b->data[i]){
+        return 1;
+      }
+    }
+  }
+  return 0;
 }
 
 kernel void test(global uint *a, global uint *b, global uint *c) {
