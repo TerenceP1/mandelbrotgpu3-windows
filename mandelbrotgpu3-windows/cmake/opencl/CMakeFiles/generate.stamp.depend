@@ -1,0 +1,53 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakePushCheckState.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CheckSymbolExists.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindOpenCL.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindTIFF.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake
+C:/Users/teren/Documents/Programming/C++/mandelbrot/repos/mandelbrotgpu3-windows/cmake/opencl/CMakeFiles/3.30.4/CMakeCXXCompiler.cmake
+C:/Users/teren/Documents/Programming/C++/mandelbrot/repos/mandelbrotgpu3-windows/cmake/opencl/CMakeFiles/3.30.4/CMakeRCCompiler.cmake
+C:/Users/teren/Documents/Programming/C++/mandelbrot/repos/mandelbrotgpu3-windows/cmake/opencl/CMakeFiles/3.30.4/CMakeSystem.cmake
+C:/Users/teren/Documents/Programming/C++/mandelbrot/repos/mandelbrotgpu3-windows/cmake/opencl/CMakeLists.txt
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/opencv4/OpenCVConfig-version.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/opencv4/OpenCVConfig.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/opencv4/OpenCVModules-debug.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/opencv4/OpenCVModules-release.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/opencv4/OpenCVModules.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf/protobuf-config-version.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf/protobuf-config.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf/protobuf-module.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf/protobuf-options.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf/protobuf-targets-debug.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf/protobuf-targets-release.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf/protobuf-targets.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/protobuf/vcpkg-cmake-wrapper.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/quirc/quirc-config-debug.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/quirc/quirc-config-release.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/quirc/quirc-config.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/installed/x64-windows/share/tiff/vcpkg-cmake-wrapper.cmake
+C:/Users/teren/Documents/vcpkg-master/vcpkg-master/scripts/buildsystems/vcpkg.cmake
