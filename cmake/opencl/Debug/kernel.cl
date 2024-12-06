@@ -173,7 +173,7 @@ int CmpD(decimal* a, decimal* b) {
   else {
     for (int i=1;i<sz;i++){
       if (a->data[i]<b->data[i]){
-        reutrn -1;
+        return -1;
       }
       else if (a->data[i]>b->data[i]){
         return 1;
