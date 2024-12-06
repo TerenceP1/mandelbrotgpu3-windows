@@ -8,7 +8,7 @@ typedef struct {
 } decimal;
 
 typedef struct {
-  decimal* x, *y, *nx, *ny, *sqTmp, *ox, *oy; // ox and oy are original x and y. sqTmp is for storing y^2
+  decimal* x, *y, *nx, *ny, *ox, *oy; // ox and oy are original x and y. sqTmp is for storing y^2(useless)
   uint* tmp;
   char* re; // string with re in decimal
   char* im; // string with im in decimal
@@ -194,7 +194,7 @@ int mandelbrot(kernelIn* a, int row){
   ZeroD(a->y);
   ZeroD(a->nx);
   ZeroD(a->ny);
-  ZeroD(a->sqTmp);
+  //ZeroD(a->sqTmp);
   ZeroD(a->xSq);
   ZeroD(a->ySq);
   ZeroD(a->tDig);
@@ -207,6 +207,10 @@ int mandelbrot(kernelIn* a, int row){
     AddD(a->ny,a->ny,a->ny);
     CopyD(a->ny,a->y);
     CopyD(a->nx,a->x);
+    AddD(a->xSq,a->ySq,a->xSq);
+    if (CmpD(a->xSq,a->tDig)==1){
+      return i;
+    }
   }
   return -1;
 }
