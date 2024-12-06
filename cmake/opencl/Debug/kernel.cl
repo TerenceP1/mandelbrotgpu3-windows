@@ -190,7 +190,11 @@ void ZeroD(decimal* a){
 }
 
 void SetD(kernelIn* a, char* b, decimal* c){
-  
+  ZeroD(c);
+  // convert integer part
+  int sign=b[0]=='-'; // negate at end
+  int i=0;
+  //while (
 }
 
 int mandelbrot(kernelIn* a, int row){
