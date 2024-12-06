@@ -208,6 +208,7 @@ void SetD(kernelIn* a, char* b, decimal* c){
     c->data[0]+=b[i]-'0';
     i++;
   }
+  if (sign){NegDecimal(c);}
 }
 
 int mandelbrot(kernelIn* a, int row){
