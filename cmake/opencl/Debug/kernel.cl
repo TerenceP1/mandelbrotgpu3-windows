@@ -194,7 +194,11 @@ void SetD(kernelIn* a, char* b, decimal* c){
   // convert integer part
   int sign=b[0]=='-'; // negate at end
   int i=0;
-  //while (
+  while (b[i]!=='.'){
+    c->data[0]*=10;
+    c->data[0]+=b[i]-'0';
+    i++;
+  }
 }
 
 int mandelbrot(kernelIn* a, int row){
