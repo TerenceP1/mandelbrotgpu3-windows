@@ -189,6 +189,10 @@ void ZeroD(decimal* a){
   }
 }
 
+void SetD(kernelIn* a, char* b, decimal* c){
+  
+}
+
 int mandelbrot(kernelIn* a, int row){
   ZeroD(a->x);
   ZeroD(a->y);
