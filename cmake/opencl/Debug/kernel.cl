@@ -183,6 +183,12 @@ int CmpD(decimal* a, decimal* b) {
   return 0;
 }
 
+void ZeroD(decimal* a){
+  for (int i=0;i<a->size;i++){
+    a->data[i]=0;
+  }
+}
+
 int mandelbrot(kernelIn* in){
   
 }
