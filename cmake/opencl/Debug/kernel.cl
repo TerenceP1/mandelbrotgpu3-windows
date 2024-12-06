@@ -191,9 +191,13 @@ void ZeroD(decimal* a){
 
 void SetD(kernelIn* a, char* b, decimal* c){
   ZeroD(c);
+  // convert decimal part
+  RecDecimal(10,a->tenth);
+  int i=0;
+  while (b[i]!='.'){i++;}
   // convert integer part
   int sign=b[0]=='-'; // negate at end
-  int i=0;
+  i=0;
   while (b[i]!=='.'){
     c->data[0]*=10;
     c->data[0]+=b[i]-'0';
