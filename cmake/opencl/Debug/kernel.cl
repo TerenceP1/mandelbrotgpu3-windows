@@ -17,6 +17,7 @@ typedef struct {
   decimal *xSq, *ySq; // for checking whether number exceeded bounds
   int *rgb; // stores rgb values for pixels row by row with r then g then b
   int maxItr;
+  int rowN; // which row to calculate
 } kernelIn;
 
 void AddD(decimal *a, decimal *b, decimal *c) {
