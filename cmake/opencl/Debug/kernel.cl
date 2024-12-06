@@ -15,6 +15,8 @@ typedef struct {
   decimal *tDig; // stores a digit or 10 during string to decimal conversion and bound check
   decimal *tenth; // stores one tenth or a power of it
   decimal *xSq, *ySq; // for checking whether number exceeded bounds
+  int *rgb; // stores rgb values for pixels row by row with r then g then b
+  int maxItr;
 } kernelIn;
 
 void AddD(decimal *a, decimal *b, decimal *c) {
