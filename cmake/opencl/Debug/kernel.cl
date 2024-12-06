@@ -167,7 +167,7 @@ int CmpD(decimal* a, decimal* b) {
   if ((int)(a->data[0])<(int)(b->data[0])){
     return -1;
   }
-  else if ((int)(a->data[0])<(int)(b->data[0])){
+  else if ((int)(a->data[0])>(int)(b->data[0])){
     return 1;
   }
   else {
