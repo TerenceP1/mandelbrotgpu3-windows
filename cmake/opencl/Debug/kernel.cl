@@ -189,7 +189,7 @@ void ZeroD(decimal* a){
   }
 }
 
-int mandelbrot(kernelIn* in, int row){
+int mandelbrot(kernelIn* a, int row){
   ZeroD(a->x);
   ZeroD(a->y);
   ZeroD(a->nx);
@@ -198,9 +198,15 @@ int mandelbrot(kernelIn* in, int row){
   ZeroD(a->xSq);
   ZeroD(a->ySq);
   ZeroD(a->tDig);
-  a->tDig[0]=4;
+  a->tDig->data[0]=4;
   for (int i=0;i<a->maxItr;i++){
-    
+    MulD(a->x,a->x,a->xSq,a->tmp);
+    MulD(a->y,a->y,a->ySq,a->tmp);
+    SubD(a->xSq,a->ySq,a->nx);
+    MulD(a->x,a->y,a->ny,a->tmp);
+    AddD(a->ny,a->ny,a->ny);
+    CopyD(a->ny,a->y);
+    CopyD(a->nx,a->x);
   }
   return -1;
 }
