@@ -183,6 +183,10 @@ int CmpD(decimal* a, decimal* b) {
   return 0;
 }
 
+int mandelbrot(kernelIn* in){
+  
+}
+
 kernel void test(global uint *a, global uint *b, global uint *c) {
   printf(":)\n\n");
   volatile uint bruh = 0;
