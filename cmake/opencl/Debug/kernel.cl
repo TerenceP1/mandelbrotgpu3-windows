@@ -199,11 +199,13 @@ void SetD(kernelIn* a, char* b, decimal* c){
   while (b[i]!='\0'){
     c->data[0]=b[i]-'0';
     MulDecimal(c,a->tenth,c);
+    i++;
   }
   // convert integer part
   int sign=b[0]=='-'; // negate at end
   i=0;
-  while (b[i]!=='.'){
+  if (sign)i++;
+  while (b[i]!='.'){
     c->data[0]*=10;
     c->data[0]+=b[i]-'0';
     i++;
