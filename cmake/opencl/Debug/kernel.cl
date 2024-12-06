@@ -194,12 +194,12 @@ void SetD(kernelIn* a, char* b, decimal* c){
   // convert decimal part
   RecDecimal(10,a->tenth);
   int i=0;
-  while (b[i]!='.'){i++;}
-  i++;
-  while (b[i]!='\0'){
+  while (b[i]!='\0'){i++;}
+  i--;
+  while (b[i]!='.'){
     c->data[0]=b[i]-'0';
     MulDecimal(c,a->tenth,c);
-    i++;
+    i--;
   }
   // convert integer part
   int sign=b[0]=='-'; // negate at end
