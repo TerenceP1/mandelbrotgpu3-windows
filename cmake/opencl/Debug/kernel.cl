@@ -189,8 +189,20 @@ void ZeroD(decimal* a){
   }
 }
 
-int mandelbrot(kernelIn* in){
-  
+int mandelbrot(kernelIn* in, int row){
+  ZeroD(a->x);
+  ZeroD(a->y);
+  ZeroD(a->nx);
+  ZeroD(a->ny);
+  ZeroD(a->sqTmp);
+  ZeroD(a->xSq);
+  ZeroD(a->ySq);
+  ZeroD(a->tDig);
+  a->tDig[0]=4;
+  for (int i=0;i<a->maxItr;i++){
+    
+  }
+  return -1;
 }
 
 kernel void test(global uint *a, global uint *b, global uint *c) {
