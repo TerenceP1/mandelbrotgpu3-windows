@@ -13,7 +13,7 @@
 using namespace std;
 
 typedef struct {
-  cl_mem *data;
+  cl_mem data;
   // uint *tmp; ineffecient waste of space// temporary storage with double the
   // size of data
   uint size;  // size of data array. data  is in big edian and has 32 bits of
@@ -178,7 +178,7 @@ int main()
     inp.maxItr=1000;
     decimal tDec;
     tDec.size=prec+1;
-    tDec.dPrec=prec;
+    tDec.dprec=prec;
     uint tmp = 3;
     clEnqueueWriteBuffer(
         queue,
