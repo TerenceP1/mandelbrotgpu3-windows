@@ -248,7 +248,7 @@ void toRgb(int res, kernelIn*a, int row){
   }
   else {
     double h=((double)res)/100.0*360.0;
-    
+    double x=1.0-fabs(((h/60.0)-(((double)((int)(h/120.0))*2.0)))-1);
   }
 }
 
