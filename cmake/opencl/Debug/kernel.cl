@@ -253,13 +253,13 @@ void toRgb(int res, kernelIn*a, int row){
 }
 
 kernel void test(global uint *a, global uint *b, global uint *c) {
-  printf(":)\n\n");
+  //printf(":)\n\n");
   volatile uint bruh = 0;
   for (int i = 0; i < 1000000000; i++) {
     int j = 1 + 1;
     bruh += i;
   }
-  printf("STALL!!!!!!\n\n");
+  //printf("STALL!!!!!!\n\n");
   *c = *a + *b;
-  printf("DONE!!!!!!\n\n");
+  //printf("DONE!!!!!!\n\n");
 }
