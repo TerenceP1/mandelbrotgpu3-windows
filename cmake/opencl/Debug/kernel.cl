@@ -192,13 +192,13 @@ void ZeroD(decimal* a){
 void SetD(kernelIn* a, char* b, decimal* c){
   ZeroD(c);
   // convert decimal part
-  RecD(10,a->tenth);
+  RecD(10,a->tenth,a->tmp);
   int i=0;
   while (b[i]!='\0'){i++;}
   i--;
   while (b[i]!='.'){
     c->data[0]=b[i]-'0';
-    MulD(c,a->tenth,c);
+    MulD(c,a->tenth,c,a->tmp);
     i--;
   }
   // convert integer part
