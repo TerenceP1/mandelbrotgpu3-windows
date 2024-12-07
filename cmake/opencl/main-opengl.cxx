@@ -22,14 +22,14 @@ typedef struct {
 } decimal;
 
 typedef struct {
-  cl_mem* x, *y, *nx, *ny, *ox, *oy; // ox and oy are original x and y. sqTmp is for storing y^2(useless)
-  cl_mem* tmp;
-  cl_mem* re; // string with re in decimal
-  cl_mem* im; // string with im in decimal
-  cl_mem *tDig; // stores a digit or 10 during string to decimal conversion and bound check
-  cl_mem *tenth; // stores one tenth or a power of it
-  cl_mem *xSq, *ySq; // for checking whether number exceeded bounds
-  cl_mem *rgb; // stores rgb values for pixels row by row with r then g then b
+  cl_mem x, y, nx, ny, ox, oy; // ox and oy are original x and y. sqTmp is for storing y^2(useless)
+  cl_mem tmp;
+  cl_mem re; // string with re in decimal
+  cl_mem im; // string with im in decimal
+  cl_mem tDig; // stores a digit or 10 during string to decimal conversion and bound check
+  cl_mem tenth; // stores one tenth or a power of it
+  cl_mem xSq, ySq; // for checking whether number exceeded bounds
+  cl_mem rgb; // stores rgb values for pixels row by row with r then g then b
   int maxItr;
 } kernelIn;
 
