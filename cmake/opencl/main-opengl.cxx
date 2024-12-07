@@ -220,7 +220,7 @@ int main()
         2,
         sizeof(cl_mem),
         &c);
-    size_t zzz = 1;
+    size_t zzz = 100000;
     cout << "kernel!!!" << clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &zzz, NULL, NULL, NULL, NULL)
          << endl;
     // Sleep(15000);
