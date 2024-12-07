@@ -1,5 +1,3 @@
-#include <math.h>
-
 typedef struct {
   uint *data;
   // uint *tmp; ineffecient waste of space// temporary storage with double the
