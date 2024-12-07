@@ -1,3 +1,5 @@
+include <math.h>
+
 typedef struct {
   uint *data;
   // uint *tmp; ineffecient waste of space// temporary storage with double the
@@ -213,7 +215,7 @@ void SetD(kernelIn* a, char* b, decimal* c){
   if (sign){NegD(c);}
 }
 
-int mandelbrot(kernelIn* a, int row){
+int mandelbrot(kernelIn* a){
   ZeroD(a->x);
   ZeroD(a->y);
   ZeroD(a->nx);
@@ -237,6 +239,19 @@ int mandelbrot(kernelIn* a, int row){
     }
   }
   return -1;
+}
+
+void toRgb(int res, kernelIn*a, int row){
+  int r,g,b;
+  if (res==-1){
+    r=0;
+    g=0;
+    b=0;
+  }
+  else {
+    double h=((double)res)/100.0*360.0;
+    
+  }
 }
 
 kernel void test(global uint *a, global uint *b, global uint *c) {
