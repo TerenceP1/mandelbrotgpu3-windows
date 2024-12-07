@@ -12,6 +12,15 @@
 #pragma comment(lib, "OpenGL32.lib")
 using namespace std;
 
+typedef struct {
+  cl_mem *data;
+  // uint *tmp; ineffecient waste of space// temporary storage with double the
+  // size of data
+  uint size;  // size of data array. data  is in big edian and has 32 bits of
+              // integer and dprec of decimal
+  uint dprec; // just for convenience: may or may not be used. dprec=size-1
+} decimal;
+
 string slurp(string nm)
 {
     ifstream in(nm);
