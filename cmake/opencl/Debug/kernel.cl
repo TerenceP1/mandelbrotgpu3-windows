@@ -249,6 +249,31 @@ void toRgb(int res, kernelIn*a, int row){
   else {
     double h=((double)res)/100.0*360.0;
     double x=1.0-fabs(((h/60.0)-(((double)((int)(h/120.0))*2.0)))-1);
+    double r_=0,g_=0,b_=0;
+    if (h<60.0){
+      r_=1;
+      g_=x;
+    }
+    else if (h<120.0){
+      g_=1;
+      r_=x;
+    }
+    else if (h<180.0){
+      g_=1;
+      b_=x;
+    }
+    else if (h<240.0){
+      b_=1;
+      g_=x;
+    }
+    else if (h<300.0){
+      r_=1;
+      b_=x;
+    }
+    else{
+      b_=1;
+      r_=x;
+    }
   }
 }
 
