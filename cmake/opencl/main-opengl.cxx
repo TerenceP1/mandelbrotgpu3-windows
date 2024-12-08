@@ -43,6 +43,7 @@ string slurp(string nm)
 
 int main()
 {
+  for (int i=0;i<100;i++){
     // Get a context
 
     cl_platform_id platform;
@@ -256,6 +257,6 @@ int main()
     clReleaseMemObject(inp.ySq);
     clReleaseProgram(program);
     clReleaseCommandQueue(queue);
-    clReleaseContext(context);
+    clReleaseContext(context);}
     return 0;
 }
