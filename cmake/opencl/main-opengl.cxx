@@ -31,6 +31,7 @@ typedef struct {
   cl_mem xSq, ySq; // for checking whether number exceeded bounds
   cl_mem rgb; // stores rgb values for pixels row by row with r then g then b
   int maxItr;
+  int frame;
 } kernelIn;
 
 string slurp(string nm)
