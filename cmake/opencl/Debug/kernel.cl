@@ -17,6 +17,7 @@ typedef struct {
   decimal *xSq, *ySq; // for checking whether number exceeded bounds
   int *rgb; // stores rgb values for pixels row by row with r then g then b
   int maxItr;
+  int frame;
 } kernelIn;
 
 void AddD(decimal *a, decimal *b, decimal *c) {
@@ -213,7 +214,7 @@ void SetD(kernelIn* a, char* b, decimal* c){
   if (sign){NegD(c);}
 }
 
-int mandelbrot(kernelIn* a){
+int mandelbrot(global kernelIn* a){
   ZeroD(a->x);
   ZeroD(a->y);
   ZeroD(a->nx);
@@ -239,7 +240,7 @@ int mandelbrot(kernelIn* a){
   return -1;
 }
 
-void toRgb(int res, kernelIn*a, int row, int col){
+void toRgb(int res, global kernelIn*a, int row, int col){
   int r,g,b;
   if (res==-1){
     r=0;
@@ -278,6 +279,10 @@ void toRgb(int res, kernelIn*a, int row, int col){
     a->rgb[3*(3840*row+col)+1]=(int)(g_*255);
     a->rgb[3*(3840*row+col)+2]=(int)(b_*255);
   }
+}
+
+kernel void main(global kernelIn* a){
+  
 }
 
 kernel void test(global uint *a, global uint *b, global uint *c) {
