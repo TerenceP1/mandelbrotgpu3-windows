@@ -43,7 +43,7 @@ string slurp(string nm)
 
 int main()
 {
-  for (int i=0;i<100;i++){
+  
     // Get a context
 
     cl_platform_id platform;
@@ -221,7 +221,7 @@ int main()
         2,
         sizeof(cl_mem),
         &c);
-    size_t zzz = 1000000000;
+    size_t zzz = 1;
     cout << "kernel!!!" << clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &zzz, NULL, NULL, NULL, NULL)
          << endl;
     // Sleep(15000);
@@ -257,6 +257,6 @@ int main()
     clReleaseMemObject(inp.ySq);
     clReleaseProgram(program);
     clReleaseCommandQueue(queue);
-    clReleaseContext(context);}
+    clReleaseContext(context);
     return 0;
 }
