@@ -239,7 +239,7 @@ int mandelbrot(kernelIn* a){
   return -1;
 }
 
-void toRgb(int res, kernelIn*a, int row){
+void toRgb(int res, kernelIn*a, int row, int col){
   int r,g,b;
   if (res==-1){
     r=0;
@@ -274,6 +274,9 @@ void toRgb(int res, kernelIn*a, int row){
       b_=1;
       r_=x;
     }
+    a->rgb[3*(3840*row+col)]=(int)(r_*255);
+    a->rgb[3*(3840*row+col)+1]=(int)(g_*255);
+    a->rgb[3*(3840*row+col)+2]=(int)(b_*255);
   }
 }
 
