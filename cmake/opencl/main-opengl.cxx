@@ -258,5 +258,6 @@ int main()
     clReleaseProgram(program);
     clReleaseCommandQueue(queue);
     clReleaseContext(context);
+    cout<<"Please note my code is incomplete and in development."<<endl;
     return 0;
 }
