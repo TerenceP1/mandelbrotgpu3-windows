@@ -284,7 +284,11 @@ void toRgb(int res, global kernelIn*a, int row, int col){
 }
 
 kernel void genRow(global kernelIn* a){
-  
+  SetD(a,"0.794328234724282",a->zoom);
+  SetD(a,a->re,a->ox);
+  SetD(a,a->im,a->oy);
+  int row=get_global_id(0);
+  int iRow=row%2160;
 }
 
 kernel void test(global uint *a, global uint *b, global uint *c) {
