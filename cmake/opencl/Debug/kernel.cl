@@ -192,7 +192,7 @@ void ZeroD(decimal* a){
   }
 }
 
-void SetD(global kernelIn* a, char* b, decimal* c){
+void SetD(global kernelIn* a, private char* b, decimal* c){
   ZeroD(c);
   // convert decimal part
   RecD(10,a->tenth,a->tmp);
