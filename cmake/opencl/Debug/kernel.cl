@@ -283,7 +283,7 @@ void toRgb(int res, global kernelIn*a, int row, int col){
   }
 }
 
-kernel void main(global kernelIn* a){
+kernel void genRow(global kernelIn* a){
   
 }
 
