@@ -18,6 +18,8 @@ typedef struct {
   int *rgb; // stores rgb values for pixels row by row with r then g then b
   int maxItr;
   int frame;
+  decimal *xCh, *yCh; // how much to step per pixel
+  decimal *zoom; // How much to zoom per frame
 } kernelIn;
 
 void AddD(decimal *a, decimal *b, decimal *c) {
