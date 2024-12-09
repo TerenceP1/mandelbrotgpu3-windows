@@ -192,7 +192,7 @@ void ZeroD(decimal* a){
   }
 }
 
-void SetD(kernelIn* a, char* b, decimal* c){
+void SetD(global kernelIn* a, char* b, decimal* c){
   ZeroD(c);
   // convert decimal part
   RecD(10,a->tenth,a->tmp);
@@ -284,7 +284,7 @@ void toRgb(int res, global kernelIn*a, int row, int col){
 }
 
 kernel void genRow(global kernelIn* a){
-  SetD(a,"0.794328234724282",a->zoom);
+  SetD(a,to_private("0.794328234724282"),a->zoom);
   SetD(a,a->re,a->ox);
   SetD(a,a->im,a->oy);
   int row=get_global_id(0);
