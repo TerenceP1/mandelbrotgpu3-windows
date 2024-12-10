@@ -284,7 +284,8 @@ void toRgb(int res, global kernelIn*a, int row, int col){
 }
 
 kernel void genRow(global kernelIn* a){
-  SetD(a,to_private("0.794328234724282"),a->zoom);
+  private char* zoom="0.794328234724282";
+  SetD(a,zoom,a->zoom);
   SetD(a,a->re,a->ox);
   SetD(a,a->im,a->oy);
   int row=get_global_id(0);
