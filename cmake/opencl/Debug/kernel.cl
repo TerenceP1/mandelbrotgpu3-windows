@@ -40,11 +40,11 @@ void NegD(decimal *a) {
   for (int i = 0; i < sz; i++) {
     a->data[i] = ~(a->data[i]);
   }
+  ulong carry=0;
   for (int i = sz - 1; i >= 0; i--) {
-    a->data[i]++;
-    if (a->data[i]) {
-      break;
-    }
+    ulong tmp=(ulong)(a->data[i]) + carry;
+    a->data[i]=tmp;
+    carry=tmp>=0x100000000L;
   }
 }
 
