@@ -57,29 +57,18 @@ void SubD(decimal *a, decimal *b, decimal *c) {
 // tmp will be size size*3. size*2 is used for multiply and full tmp is used for
 // division
 
-void MulD(decimal *a, decimal *b, decimal *c, uint *tmp) {
+void MulD(decimal *a, decimal *b, decimal *c) {
   ulong mltT;
-  ulong carry = 0;
+  int pass = 0;
+  ulong tSm;
   int sz = a->size;
-  for (int i = 0; i < sz * 2; i++) {
-    tmp[i] = 0;
-  }
-  for (int i = 0; i < sz; i++) {
-    for (int j = 0; j < sz; j++) {
-      mltT = (ulong)(a->data[i]) * (ulong)(b->data[j]);
+  for (int i = sz - 1; i > 0; i++) {
+    //c->data
+    for (int j = 0; j <= i; j++) {
+      mltT = (ulong)(a->data[j]) * (ulong)(b->data[i - j]);
       // Add least significant half
       ulong hf = mltT & 0xffffffffL;
-      carry = (ulong)(tmp[1 + i + j]) + hf;
-      tmp[i + j + 1] = (uint)carry;
-      if (carry & 0x100000000L) {
-        // Add the carry
-        for (int k = i + j; k >= 0; k--) {
-          tmp[k]++;
-          if (tmp[k]) {
-            break;
-          }
-        }
-      }
+      //tSm=hf+
       // Add the most significant half
       hf = mltT >> 32;
       carry = (ulong)(tmp[i + j]) + hf;
