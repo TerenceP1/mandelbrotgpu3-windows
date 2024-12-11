@@ -25,17 +25,12 @@ typedef struct {
 void AddD(decimal *a, decimal *b, decimal *c) {
   // does c=a+b
   ulong psm = 0; // used for finding the pass bit
-  int pass = 0;
   uint sz = a->size;
   for (int i = sz - 1; i >= 0; i--) {
-    psm = (ulong)(a->data[i]) + (ulong)(b->data[i]);
-    if (pass) {
-      psm++;
-    }
-    if (psm & 0x100000000L) {
-      pass = 1;
-    } else {
-      pass = 0;
+    psm = (ulong)(a->data[i]) + (ulong)(b->data[i]) + (ulong)(c->data);
+    c->data[i] = psm;
+    if (i < sz - 1) {
+      c->data[i + 1] = psm >= 0x100000000L;
     }
   }
 }
