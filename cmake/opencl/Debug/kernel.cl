@@ -27,10 +27,10 @@ void AddD(decimal *a, decimal *b, decimal *c) {
   ulong psm = 0; // used for finding the pass bit
   uint sz = a->size;
   for (int i = sz - 1; i >= 0; i--) {
-    psm = (ulong)(a->data[i]) + (ulong)(b->data[i]) + (ulong)(c->data);
+    psm = (ulong)(a->data[i]) + (ulong)(b->data[i]) + (ulong)(c->data[i]);
     c->data[i] = psm;
-    if (i < sz - 1) {
-      c->data[i + 1] = psm >= 0x100000000L;
+    if (i > 0) {
+      c->data[i - 1] = psm >= 0x100000000L;
     }
   }
 }
