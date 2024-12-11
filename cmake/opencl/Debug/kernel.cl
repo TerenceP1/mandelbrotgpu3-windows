@@ -284,7 +284,7 @@ void toRgb(int res, global kernelIn*a, int row, int col){
 }
 
 kernel void genRow(global kernelIn* a){
-  private char* zoom="0.794328234724282";
+  private char zoom[18] = {'0', '.', '7', '9', '4', '3', '2', '8', '2', '3', '4', '7', '2', '4', '2', '8', '2','\0'};
   SetD(a,zoom,a->zoom);
   SetD(a,a->re,a->ox);
   SetD(a,a->im,a->oy);
