@@ -62,32 +62,32 @@ void MulD(decimal *a, decimal *b, decimal *c) {
   int pass = 0;
   ulong tSm;
   int sz = a->size;
+  for (int i=0;i<sz;i++){
+    c->data[i]=0;
+  }
   for (int i = sz - 1; i > 0; i++) {
-    //c->data
     for (int j = 0; j <= i; j++) {
       mltT = (ulong)(a->data[j]) * (ulong)(b->data[i - j]);
       // Add least significant half
       ulong hf = mltT & 0xffffffffL;
-      //tSm=hf+
+      tSm=hf+(ulong)(c->data[i]);
+      // Pass the carry without path divergence
+      if (i>0){
+        c->data[i-1]+=tSm>=0x100000000L;
+        if (i>1){
+          c->data[i-2]+=c->data[i-1]==0;
+        }
+      }
       // Add the most significant half
       hf = mltT >> 32;
-      carry = (ulong)(tmp[i + j]) + hf;
-      tmp[i + j] = (uint)carry;
-      if (carry & 0x100000000L) {
-        // Add the carry
-        if (i + j > 0) {
-          for (int k = i + j - 1; k >= 0; k--) {
-            tmp[k]++;
-            if (tmp[k]) {
-              break;
-            }
-          }
+      if (i>0) {
+        tSm=hf+(ulong)(c->data[i-1]);
+        // Pass the carry without path divergence
+        if (i>1){
+          c->data[i-2]+=tSm>=0x100000000L;
         }
       }
     }
-  }
-  for (int i = 1; i < 1 + sz; i++) {
-    c->data[i - 1] = tmp[i];
   }
 }
 
