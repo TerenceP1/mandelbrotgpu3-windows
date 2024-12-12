@@ -185,7 +185,7 @@ void SetD(global kernelIn* a, private char* b, decimal* c){
   i--;
   while (b[i]!='.'){
     c->data[0]=b[i]-'0';
-    MulD(c,a->tenth,c,a->tmp);
+    MulD(c,a->tenth,c);
     i--;
   }
   // convert integer part
@@ -199,7 +199,7 @@ void SetD(global kernelIn* a, private char* b, decimal* c){
   }
   if (sign){NegD(c);}
 }
-
+/*Will be redesigned for anti-branch divergence
 int mandelbrot(global kernelIn* a){
   ZeroD(a->x);
   ZeroD(a->y);
@@ -275,7 +275,7 @@ kernel void genRow(global kernelIn* a){
   int row=get_global_id(0);
   int iRow=row%2160;
 }
-
+*/
 kernel void test(global uint *a, global uint *b, global uint *c) {
   //printf(":)\n\n");
   volatile uint bruh = 0;
