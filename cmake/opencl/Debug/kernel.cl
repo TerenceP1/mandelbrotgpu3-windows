@@ -6,7 +6,7 @@ typedef struct {
               // integer and dprec of decimal
   uint dprec; // just for convenience: may or may not be used. dprec=size-1
 } decimal;
-
+/*
 typedef struct {
   decimal* x, *y, *nx, *ny, *ox, *oy; // ox and oy are original x and y. sqTmp is for storing y^2(useless)
   uint* tmp;
@@ -21,6 +21,14 @@ typedef struct {
   decimal *xCh, *yCh; // how much to step per pixel
   decimal *zoom; // How much to zoom per frame
 } kernelIn;
+*/
+
+// operation is a multi-stage proccess
+typedef struct {
+  decimal zoom; // Zoom per frame
+  decimal tenth; // stores one tenth
+  uint* tmp;
+} globalInit; // initializes all global decimals
 
 void AddD(decimal *a, decimal *b, decimal *c) {
   // does c=a+b
@@ -176,7 +184,7 @@ void ZeroD(decimal* a){
   }
 }
 
-void SetD(global kernelIn* a, private char* b, decimal* c){
+void SetD(global globalInit* a, private char* b, decimal* c){
   ZeroD(c);
   // convert decimal part
   RecD(10,a->tenth,a->tmp);
@@ -276,6 +284,10 @@ kernel void genRow(global kernelIn* a){
   int iRow=row%2160;
 }
 */
+
+kernel void globalInitK(global globalInit a){
+  RecD(10,&(a->tenth),a->tmp);
+}
 kernel void test(global uint *a, global uint *b, global uint *c) {
   //printf(":)\n\n");
   volatile uint bruh = 0;
