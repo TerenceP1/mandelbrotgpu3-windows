@@ -187,7 +187,7 @@ void ZeroD(decimal* a){
 void SetD(global globalInit* a, private char* b, decimal* c){
   ZeroD(c);
   // convert decimal part
-  RecD(10,a->tenth,a->tmp);
+  //RecD(10,a->tenth,a->tmp);
   int i=0;
   while (b[i]!='\0'){i++;}
   i--;
@@ -287,6 +287,8 @@ kernel void genRow(global kernelIn* a){
 
 kernel void globalInitK(global globalInit a){
   RecD(10,&(a->tenth),a->tmp);
+  private char zoom[18] = {'0', '.', '7', '9', '4', '3', '2', '8', '2', '3', '4', '7', '2', '4', '2', '8', '2','\0'};
+  SetD(&a,zoom,&(a->zoom));
 }
 kernel void test(global uint *a, global uint *b, global uint *c) {
   //printf(":)\n\n");
