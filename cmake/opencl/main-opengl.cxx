@@ -165,22 +165,7 @@ int main()
         NULL,
         NULL);
     int prec=4;
-    kernelIn inp;
-    inp.x=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.y=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.nx=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.ny=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.ox=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.oy=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.tmp=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(int)*(5*prec+5),NULL,NULL);
-    inp.tDig=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.tenth=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.xSq=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.ySq=clCreateBuffer(context,CL_MEM_READ_WRITE,sizeof(decimal),NULL,NULL);
-    inp.maxItr=1000;
-    decimal tDec;
-    tDec.size=prec+1;
-    tDec.dprec=prec;
+    
     uint tmp = 3;
     clEnqueueWriteBuffer(
         queue,
@@ -245,20 +230,10 @@ int main()
     clReleaseMemObject(a);
     clReleaseMemObject(b);
     clReleaseMemObject(c);
-    clReleaseMemObject(inp.x);
-    clReleaseMemObject(inp.y);
-    clReleaseMemObject(inp.nx);
-    clReleaseMemObject(inp.ny);
-    clReleaseMemObject(inp.ox);
-    clReleaseMemObject(inp.oy);
-    clReleaseMemObject(inp.tmp);
-    clReleaseMemObject(inp.tDig);
-    clReleaseMemObject(inp.tenth);
-    clReleaseMemObject(inp.xSq);
-    clReleaseMemObject(inp.ySq);
+    
     clReleaseProgram(program);
     clReleaseCommandQueue(queue);
     clReleaseContext(context);
-    cout<<"Please note my code is incomplete and in development."<<endl;
+    cout<<"Please note jmy code is incomplete and in development."<<endl;
     return 0;
 }
