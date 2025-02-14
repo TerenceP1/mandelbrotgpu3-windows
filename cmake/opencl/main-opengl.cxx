@@ -105,6 +105,13 @@ int main()
         NULL);
     string nstr3(version, len);
     cout << "version: " << nstr3 << endl;
+    cl_ulong localMemSz;
+    clGetDeviceInfo(
+      device,
+      CL_DEVICE_LOCAL_MEM_SIZE,
+      sizeof(cl_ulong),
+      &localMemSz,
+      NULL);
     string code = slurp("kernel.cl");
     context = clCreateContext(
         NULL,
